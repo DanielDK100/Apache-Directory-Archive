@@ -14,6 +14,7 @@ This theme is setup with Bootstrap's table classes and grid system, and has anot
 `AuthName "Private domain"`<br>
 `AuthUserFile /etc/apache2/.htpasswd`<br>
 `Require valid-user`
+
 **Notice** that you will also need to create a `.htpasswd` file for this to work. This file will contain a username and a password. Use [this tool](http://www.htaccesstools.com/htpasswd-generator/) to generate an entry for the `.htpasswd` file. Finally, remember to change the `AuthUserFile` to the correct path for your server.
 
 The following shows the archive in action (I use it mostly for vacation photos).

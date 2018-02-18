@@ -9,3 +9,5 @@ This theme is inspired by [Apaxy](https://github.com/oupala/apaxy). The icons fo
 This theme is setup with Bootstrap's table classes and grid system, and has another few functionalities including:
 * Fancybox for viewing images and PDF files in the browser.
 * Breadcrumb navigation for easy navigation between folders.
+
+![Screenshot](https://prnt.sc/igg3l5)

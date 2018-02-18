@@ -10,7 +10,7 @@ This theme is setup with Bootstrap's table classes and grid system, and has anot
 * Fancybox for viewing images and PDF files in the browser.
 * Breadcrumb navigation for easy navigation between folders.
 * (OPTIONAL) One way to restrict access to your archive is to use basic authentication for your domain. Use the following Apache configuration in your `.htaccess` file to enable this feature:
-<br>`AuthType Basic`<br>
+<br>`AuthType Basic<br><br>`<br>
 `AuthName "Private domain"`<br>
 `AuthUserFile /etc/apache2/.htpasswd`<br>
 `Require valid-user`

@@ -10,5 +10,5 @@ This theme is setup with Bootstrap's table classes and grid system, and has anot
 * Fancybox for viewing images and PDF files in the browser.
 * Breadcrumb navigation for easy navigation between folders.
 
-![Screenshot](screenshot.png)
-
+![Screenshot](screenshot1.png)
+![Screenshot Fancybox](screenshot2.png)

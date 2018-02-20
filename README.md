@@ -10,6 +10,7 @@ This theme is inspired by [Apaxy](https://github.com/oupala/apaxy). The icons fo
 This theme is setup with Bootstrap's table classes and grid system, and has another few functionalities including:
 * Fancybox for viewing images and PDF files in the browser.
 * Breadcrumb navigation for easy navigation between folders.
+* Search bar that makes all files and directories searchable.
 * Bootstrap CSS styles.
 * **(OPTIONAL)** One way to restrict access to your archive is to use basic authentication for your domain. Use the following Apache configuration in your `.htaccess` file to enable this feature:
 <br>`AuthType Basic`<br>

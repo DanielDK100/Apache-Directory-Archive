@@ -5,22 +5,32 @@ function manipulateTable(element) {
 	$('.table td').removeAttr('align');
 }
 
-function generateBreadcrumbs(element) {
-	var hostname = location.origin;
-	var url = location.pathname;
-	var breadcrumbs = url.split('/').slice(1, -1);
+function generateBreadcrumbs(hostname, path, rootDirectory, element) {
+	var breadcrumbs = path.split('/').slice(1, -1);
 	var concatenateBreadcrumbs = '';
+	if (breadcrumbs == 0) {
+		var rootDirectoryLi = $('<li>').text(rootDirectory);
+	}
+	else {
+		var rootDirectoryLi = $('<li>');
+		var rootDirectoryA = $('<a>').attr('href', hostname).text(rootDirectory);
+	}
+	element.append(rootDirectoryLi.append(rootDirectoryA));
 	$.each(breadcrumbs, function(key, value) {
 		var breadcrumb = decodeURIComponent(value);
 		var isLastBreadcrumb = key == breadcrumbs.length -1;
 		concatenateBreadcrumbs += breadcrumb + '/';
 		if (isLastBreadcrumb) {
-			element.append(breadcrumb + ' / ');
+			var li = $('<li>').text(breadcrumb);
+			element.append(li);
 		}
 		else {
-			element.append('<a href="' + hostname + '/' + concatenateBreadcrumbs + '">' + breadcrumb + '</a>' + ' / ');
+			var li = $('<li>');
+			var a = $('<a>').attr('href', hostname + '/' + concatenateBreadcrumbs).text(breadcrumb);
+			element.append(li.append(a));
 		}
 	});
+	$(element).find('li').last().addClass('active');
 }
 
 function search(element) {
@@ -48,7 +58,7 @@ function footerInformation(element, date) {
 }
 
 manipulateTable($('table'));
-generateBreadcrumbs($('#breadcrumbs'));
+generateBreadcrumbs(location.origin, location.pathname, 'Root', $('#breadcrumbs'));
 search($('#search'));
 initializeFancybox($('[data-fancybox]'));
 footerInformation($('#date'), new Date());

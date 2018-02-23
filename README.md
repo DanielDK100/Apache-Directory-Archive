@@ -22,6 +22,7 @@ Require valid-user
 
 **Notice** that you will also need to create a `.htpasswd` file for the authentication to work. This file will contain a username and a password. Use [this tool](http://www.htaccesstools.com/htpasswd-generator/) to generate an entry for the `.htpasswd` file. Finally, remember to change the `AuthUserFile` to the correct path for your server. Whenever you access the domain, you should now be prompted with a login dialog.
 
+## Screenshots
 The following shows screenshots of the archive in action (I use it mostly for vacation photos, degree certificates etc.).
 ![Screenshot](Screenshots/screenshot1.png)
 ![Screenshot Fancybox](Screenshots/screenshot2.png)

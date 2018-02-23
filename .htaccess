@@ -73,3 +73,4 @@ DefaultIcon /theme/icons/default.png
 
 HeaderName /theme/header.html
 ReadmeName /theme/footer.html
+ErrorDocument 404 /theme/404.html

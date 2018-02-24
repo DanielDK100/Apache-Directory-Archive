@@ -5,41 +5,30 @@ function manipulateTable(element) {
 	$('.table td').removeAttr('align');
 }
 
+function search(element) {
+	element.on('keyup', function() {
+		var searchString = $(this).val().toLowerCase();
+		$('.table tr').not(':nth-child(1)').not(':nth-child(2)').filter(function() {
+			$(this).toggle($(this).text().toLowerCase().indexOf(searchString) > -1)
+		});
+	});
+}
+
 function generateBreadcrumbs(hostname, path, rootDirectory, element) {
 	var breadcrumbs = path.split('/').slice(1, -1);
 	var concatenateBreadcrumbs = '';
-	if (breadcrumbs == 0) {
-		var rootDirectoryLi = $('<li>').text(rootDirectory);
-	}
-	else {
-		var rootDirectoryLi = $('<li>');
-		var rootDirectoryA = $('<a>').attr('href', hostname).text(rootDirectory);
-	}
+	var rootDirectoryLi = $('<li>');
+	var rootDirectoryA = $('<a>').attr('href', hostname).text(rootDirectory);
 	element.append(rootDirectoryLi.append(rootDirectoryA));
 	$.each(breadcrumbs, function(key, value) {
 		var breadcrumb = decodeURIComponent(value);
-		var isLastBreadcrumb = key == breadcrumbs.length -1;
 		concatenateBreadcrumbs += breadcrumb + '/';
-		if (isLastBreadcrumb) {
-			var li = $('<li>').text(breadcrumb);
-			element.append(li);
-		}
-		else {
-			var li = $('<li>');
-			var a = $('<a>').attr('href', hostname + '/' + concatenateBreadcrumbs).text(breadcrumb);
-			element.append(li.append(a));
-		}
+		var li = $('<li>');
+		var a = $('<a>').attr('href', hostname + '/' + concatenateBreadcrumbs).text(breadcrumb);
+		element.append(li.append(a));
 	});
-	$(element).find('li').last().addClass('active');
-}
-
-function search(element) {
-	element.on('keyup', function() {
-		var value = $(this).val().toLowerCase();
-		$('.table tr').not(':nth-child(1)').not(':nth-child(2)').filter(function() {
-			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-		});
-	});
+	var lastA = $(element).find('li > a').last();
+	$(element).find('li').last().text(lastA.text()).addClass('active');
 }
 
 function initializeFancybox(element, options = null) {
@@ -54,11 +43,11 @@ function initializeFancybox(element, options = null) {
 }
 
 function footerInformation(element, date) {
-	element.text(date.getFullYear());	
+	element.find('#date').text(date.getFullYear());
 }
 
 manipulateTable($('table'));
-generateBreadcrumbs(location.origin, location.pathname, 'Root', $('#breadcrumbs'));
 search($('#search'));
+generateBreadcrumbs(location.origin, location.pathname, 'Root', $('#breadcrumbs'));
 initializeFancybox($('[data-fancybox]'));
-footerInformation($('#date'), new Date());
+footerInformation($('footer'), new Date());

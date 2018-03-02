@@ -61,7 +61,7 @@ AddIcon /theme/icons/rss.png .rss
 AddIcon /theme/icons/script.png .bat .cmd .sh
 AddIcon /theme/icons/sql.png .sql
 AddIcon /theme/icons/tiff.png .tiff .tif
-AddIcon /theme/icons/text.png .txt .nfo
+AddIcon /theme/icons/text.png .txt .nfo .epub .mobi .azw
 AddIcon /theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
 AddIcon /theme/icons/xml.png .xml
 AddIcon /theme/icons/zip.png .zip
@@ -73,4 +73,14 @@ DefaultIcon /theme/icons/default.png
 
 HeaderName /theme/header.html
 ReadmeName /theme/footer.html
-ErrorDocument 404 /theme/404.html
+
+#
+# ERROR PAGES
+#
+
+ErrorDocument 400 http://dev.apache-directory-archive.dk/theme/error.html?code=400
+ErrorDocument 403 http://dev.apache-directory-archive.dk/theme/error.html?code=403
+ErrorDocument 404 http://dev.apache-directory-archive.dk/theme/error.html?code=404
+ErrorDocument 408 http://dev.apache-directory-archive.dk/theme/error.html?code=408
+ErrorDocument 500 http://dev.apache-directory-archive.dk/theme/error.html?code=500
+ErrorDocument 502 http://dev.apache-directory-archive.dk/theme/error.html?code=502

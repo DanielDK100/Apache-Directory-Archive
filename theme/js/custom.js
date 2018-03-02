@@ -58,7 +58,7 @@ function initializeFancybox(element, fileExtensions, options = null) {
 
 function footerInformation(element) {
     var date = new Date();
-    var title = $('head').find('title').text();
+    var title = document.title;
     element.find('small').text(date.getFullYear() + ' | ' + title);
 }
 
@@ -75,6 +75,8 @@ var fileExtensions = [{
     'pdf'
     ]
 }];
+
+
 manipulateTable($('table'));
 searchBar($('#search'));
 generateBreadcrumbs(location.origin, location.pathname, 'Root', $('#breadcrumbs'));

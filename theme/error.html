@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
     <link rel="stylesheet" href="/theme/css/bootstrap-theme.min.css">
-    <title>404 - Apache Directory Archive</title>
+    <title>Apache Directory Archive</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-center">
                 <h1>Oops!</h1>
-                <h3>404 Not Found</h3>
-                <p class="text-muted">Sorry, an error has occured - requested file not found!</p>
+                <h3 id="error-code"></h3>
+                <p id="error-message" class="text-muted"></p>
                 <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Take me home</a>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/theme/js/error.js"></script>
 </body>
 </html>
